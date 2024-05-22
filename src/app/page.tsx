@@ -1,9 +1,28 @@
 import Image from "next/image";
+import Result from "@/components/result";
+import React from 'react'
 
-export default function Home() {
+const API_KEY = process.env.API_KEY
+
+const Home =  async ({searchParams}: any) => {
+  const genre = searchParams.genre || "fetchTrending"
+  const res = await fetch(`https://api.themoviedb.org/3${
+    genre === 'fetchTopRated' ? `/tv/top_rated` : `/trending/all/week`
+  }?api_key=${API_KEY}&language=en-US&page=1`)
+  const data = await res.json()
+  if (!res.ok) {
+    throw new Error('Failed to fetch data')
+  }
+  const results = data.results
+  console.log(results)
+
   return (
     <div>
-      <p>Welcome</p>
+      <Result results={results} />
     </div>
-  );
+  )
 }
+
+export default Home
+
+
