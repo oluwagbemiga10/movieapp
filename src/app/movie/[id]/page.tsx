@@ -15,6 +15,7 @@ const MoviePage = async ({params}:any) => {
             src={`https://image.tmdb.org/t/p/original/${
               movie.backdrop_path || movie.poster_path
             }`}
+            alt=''
             width={500}
             height={300}
             className='rounded-lg'
