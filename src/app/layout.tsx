@@ -23,12 +23,12 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Providers>
-          <Suspense>
+          
         <Navbar />
         <Header />
         <Search />
         {children}
-        </Suspense>
+        
         </Providers>
       </body>
     </html>
