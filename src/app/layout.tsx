@@ -5,6 +5,7 @@ import Navbar from "@/components/navbar";
 import Providers from "./provider";
 import Header from "@/components/header";
 import Search from "@/components/search";
+import { Suspense } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,10 +23,12 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Providers>
+          <Suspense>
         <Navbar />
         <Header />
         <Search />
         {children}
+        </Suspense>
         </Providers>
       </body>
     </html>
