@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image';
 
-const MoviePage = async ({params}:any) => {
+export const MoviePage = async ({params}:any) => {
     const movieId = params.id;
     const res = await fetch(
       `https://api.themoviedb.org/3/movie/${movieId}?api_key=${process.env.API_KEY}`
