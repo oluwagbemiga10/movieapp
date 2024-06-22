@@ -40,4 +40,4 @@ const MoviePage = async ({params}:any) => {
     );
 }
 
-export default MoviePage
+
