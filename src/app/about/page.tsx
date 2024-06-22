@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react'
 
 const About = () => {
-  <Suspense>
+ 
   return (
   
     <div className='max-w-6xl mx-auto p-3 space-y-4'>
@@ -38,7 +38,7 @@ const About = () => {
     </div>
    
   )
-  </Suspense>
+  
 }
 
 export default About
