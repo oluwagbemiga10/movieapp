@@ -1,7 +1,8 @@
 import React from 'react'
 import Image from 'next/image';
 
-export const MoviePage = async ({params}:any) => {
+
+const MoviePage = async ({params}:any) => {
     const movieId = params.id;
     const res = await fetch(
       `https://api.themoviedb.org/3/movie/${movieId}?api_key=${process.env.API_KEY}`
@@ -40,4 +41,6 @@ export const MoviePage = async ({params}:any) => {
     );
 }
 
+
+module.exports =  MoviePage
 
