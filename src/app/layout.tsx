@@ -22,6 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        <Suspense>
         <Providers>
           
         <Navbar />
@@ -30,6 +31,7 @@ export default function RootLayout({
         {children}
         
         </Providers>
+        </Suspense>
       </body>
     </html>
   );
